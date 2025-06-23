@@ -1,0 +1,31 @@
+<!-- 登录页面 -->
+<!-- 
+    1.如果没有登录数据
+    提示用户登录
+    2.如果有登录数据
+    显示用户各种信息，并且可以完善信息
+
+    点击退出按钮
+    清除本地的登录数据
+ -->
+<view wx:if="{{!hasUserInfo}}" class="unlogged">
+    <view class="prompt">您还未进行登录，请先登录以后完善个人信息</view>
+    <button bindtap="login" class="login-btn">登录</button>
+</view>
+<view wx:else>
+    <view class="con">
+        <!-- 头像和昵称，请求微信得来也可以自定义 -->
+        <view class="user-info">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <text>{{userInfo.nickName}}</text>
+        </view>
+        <!-- 其他信息：会员等级 学号 -->
+        <view class="user-info">
+            <text>会员等级：{{userInfo.memberLevel}}</text>
+            <text>学号：{{userInfo.studentId}}</text>
+        </view>
+        <!-- 退出登录按钮 -->
+        <button bindtap="logout" class="logout-btn">退出登录</button>
+    </view>
+</view>
+

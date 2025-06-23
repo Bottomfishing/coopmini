@@ -1,0 +1,151 @@
+/* 分类导航栏样式 */
+page {
+    background: #f8f9fa;
+}
+
+/* 顶部门店信息 */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20rpx;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    background-color: #ffffff;
+    box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-bottom: 24rpx;
+}
+
+/* 分类导航区域 */
+.category-nav {
+    margin-top: 70rpx;
+    /* 顶部栏高度 */
+    width: 200rpx;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fcfcfc;
+    border-right: 1rpx solid #eee;
+    padding: 20rpx 0;
+    box-shadow: 2rpx 0 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.category-item {
+    height: 100rpx;
+    padding: 0 30rpx;
+    display: flex;
+    align-items: center;
+    color: #495057;
+    font-size: 28rpx;
+    transition: all 0.3s;
+}
+
+
+.category-nav view.active {
+    height: 140rpx;
+    background: linear-gradient(to right, #e7e6e6, #fefbfb);
+    font-weight: 560;
+    position: relative;
+}
+
+.category-nav view.active::after {
+    content: '';
+    width: 8rpx;
+    height: 90rpx;
+    background-color: #fc9b56;
+    border-radius: 0 10rpx 10rpx 0;
+    position: absolute;
+    left: 0;
+}
+
+
+.goods-list {
+    position: absolute;
+    top: 70rpx;
+    left: 200rpx;
+    padding: 20rpx;
+    width: calc(100% - 220rpx);
+    background-color: #f8f9fa;
+    border-left: 1rpx solid #eee;
+    z-index: 1;
+}
+
+.goodsad {
+    width: 95%;
+    height: 200rpx;
+    border-radius: 10rpx;
+}
+
+.goods-item {
+    width: 460rpx;
+    padding: 20rpx;
+    display: flex;
+    gap: 20rpx;
+    background: white;
+    box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.goods-item image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 8rpx;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.goods-item text {
+    display: block;
+    font-size: 28rpx;
+    line-height: 1.4;
+}
+
+.goods-item view:nth-child(2) {
+    color: #fbba47;
+    font-weight: bold;
+    font-size: 32rpx;
+    white-space: nowrap;
+}
+
+.goods-item button {
+    line-height: 1;
+    width: 50rpx;
+    height: 60rpx;
+    border-radius: 10rpx;
+    background: #ffbb54;
+    color: white;
+    display: absolute;
+    right: 100rpx;
+    bottom: -150rpx;
+}
+
+/* 购物车悬浮窗 */
+.cart-box {
+    position: fixed;
+    right: 40rpx;
+    bottom: 80rpx;
+    width: 100rpx;
+    height: 100rpx;
+    background: #ffc869;
+    border-radius: 50%;
+    box-shadow: 4rpx 4rpx 12rpx rgba(0, 0, 0, 0.3);
+}
+
+.cart-box image {
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    margin: 20rpx;
+}
+
+.cart-box text {
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+    background: red;
+    color: white;
+    padding: 0 10rpx;
+    border-radius: 20rpx;
+    font-size: 24rpx;
+}

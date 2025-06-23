@@ -1,0 +1,33 @@
+<!-- 题头 选择门店 -->
+<view class="header">某某大学创业中心 > </view>
+
+<scroll-view class="category-nav">
+    <view wx:for="{{categories}}" wx:key="_id" bindtap="switchCategory" data-index="{{index}}"
+        class="category-item {{index === currentCategoryIndex ? 'active' : ''}}">
+        {{item.name}}
+    </view>
+</scroll-view>
+
+<!-- 商品展示区 -->
+
+<scroll-view class="goods-list">
+    <!-- 一个图片 -->
+    <image src="https://p0.ssl.qhimgs1.com/t016ab94e29df4e78d0.jpg" class="goodsad"></image>
+    <block wx:for="{{currentGoods}}" wx:key="index">
+        <view id="category-{{item.category}}" class="goods-item">
+            <image src="{{item.image}}"></image>
+            <view>{{item.name}}</view>
+            <view>¥{{item.price}}</view>
+            <button bindtap="addToCart" data-id="{{item._id}}">+</button>
+        </view>
+    </block>
+</scroll-view>
+
+
+
+
+<!-- 购物车悬浮窗 -->
+<view class="cart-box" bindtap="goToCart">
+    <image src="../../images/购物车.png"></image>
+    <text>{{cartCount}}</text>
+</view>

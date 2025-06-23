@@ -1,0 +1,31 @@
+/* 优化全局样式变量，使用更柔和的颜色 */
+:root {
+    --primary-color: #ffb703; /* 更温暖的橙色 */
+    --success-color: #8ac926; /* 更柔和的绿色 */
+    --warning-color: #ffca3a; /* 更明亮的黄色 */
+    --text-color: #2a2a2a; /* 稍深的文字颜色，提高可读性 */
+    --background-color: #f5f5f5; /* 新增背景颜色，用于页面整体背景 */
+    --card-hover-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1); /* 新增卡片悬停阴影 */
+}
+
+/* 设置页面整体背景 */
+page {
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; /* 使用更通用的字体 */
+}
+
+/* 优化通用卡片样式 */
+.common-card {
+    margin: 30rpx; /* 适当增加外边距 */
+    padding: 40rpx; /* 适当增加内边距 */
+    background: #ffffff; /* 明确背景颜色 */
+    border-radius: 24rpx; /* 增加圆角半径 */
+    box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.08); /* 优化阴影效果 */
+    transition: all 0.3s ease; /* 新增过渡效果 */
+}
+
+/* 卡片悬停效果 */
+.common-card:hover {
+    transform: translateY(-4rpx); /* 悬停时卡片上移 */
+    box-shadow: var(--card-hover-shadow); /* 悬停时使用更强的阴影 */
+}

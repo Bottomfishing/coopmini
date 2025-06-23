@@ -1,0 +1,60 @@
+/* 整体页面样式 */
+page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* 未登录提示和按钮 */
+.unlogged {
+  text-align: center;
+}
+.unlogged .prompt {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.unlogged .login-btn {
+  width: 200px;
+  background-color: #07c160;
+  color: white;
+  border-radius: 25px;
+}
+
+/* 已登录内容容器 */
+.con {
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* 用户信息区域 */
+.user-info {
+  margin-bottom: 20px;
+}
+.user-info image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.user-info text {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  width: 100%;
+  background-color: #e64340;
+  color: white;
+  border-radius: 25px;
+}

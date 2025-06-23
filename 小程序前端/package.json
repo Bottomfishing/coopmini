@@ -1,0 +1,12 @@
+{
+  "name": "coffee-order-system",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "miniprogram build --watch"
+  },
+  "dependencies": {
+    "miniprogram-api-typings": "^3.9.0",
+    "miniprogram-ci": "^1.9.0",
+    "wx-server-sdk": "^3.0.1"
+  }
+}

@@ -1,0 +1,58 @@
+<!-- 首页推送页面 -->
+
+<!-- 轮播图 -->
+<view class="banner">
+    <swiper class="swiper" circular autoplay mode="widthFix" indicator-dots="true" interval="3500"
+        easing-function="easeInOutCubic" layout-type="stackLeft">
+        <block wx:for="{{images}}" wx:key="index">
+            <swiper-item>
+                <image class="picture" src="{{item}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- 到店取餐 外面配送 -->
+<view class="delivery">
+    <view bindtap="navigateToPickup">
+        <view class="delivery-item">
+            <image class="delivery-icon" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/取餐.jpg" />
+            <text class="delivery-text">到店取餐</text>
+        </view>
+    </view>
+    <view bindtap="navigateToPickup">
+        <view class="delivery-item">
+            <image class="delivery-icon" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/外卖.jpg" />
+            <text class="delivery-text">外面配送</text>
+        </view>
+    </view>
+</view>
+
+<!-- 公告栏 -->
+<view class="notice">
+    <image class="notice-icon" src="/images/notice.png" />
+    <swiper class="notice-content" vertical autoplay interval="3000">
+        <block wx:for="{{notices}}" wx:key="id">
+            <swiper-item>
+                <text>{{item.content}}</text>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- 推荐商品 -->
+<view class="recommend-title">
+    <text>推荐商品</text>
+    <text class="more" bindtap="navigateToGoodsList">查看更多 ></text>
+</view>
+
+<!-- 图片展示 -->
+<view class="image-show">
+    <image class="image-item1" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/1.jpg" />
+    <image class="image-item2" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/2.jpg" />
+</view>
+<view class="image-show"> 
+<image class="image-item2" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/2.jpg" />
+    <image class="image-item1" src="cloud://cloud1-6gzxjy5k59c1f367.636c-cloud1-6gzxjy5k59c1f367-1356239324/images/homeimg/1.jpg" />
+   
+</view>

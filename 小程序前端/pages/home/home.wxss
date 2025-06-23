@@ -1,0 +1,119 @@
+page {
+    background: #fcfcfc;
+}
+
+.banner {
+    margin: 18rpx;
+    margin-bottom: 40rpx;
+}
+
+.swiper {
+    height: 380rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.swiper image {
+    width: 100%;
+    height: 100%;
+}
+
+.picture {
+    width: 100%;
+}
+
+.delivery {
+    display: flex;
+    margin: 0 14rpx;
+}
+
+.delivery-item {
+    position: relative;
+    width: 340rpx;
+    margin: 0 10rpx;
+}
+
+.delivery-icon {
+    width: 340rpx;
+    height: 320rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.delivery-text {
+    position: absolute;
+    top: 38%;
+    left: 80rpx;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-weight: 800;
+    font-size: large;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    z-index: 1;
+}
+
+
+
+/* 公告栏样式 */
+.notice {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 14rpx;
+    margin: 14rpx;
+    background: #fff7ef;
+    border-radius: 16rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 暂无icon */
+.notice-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.notice-content {
+    flex: 1;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+/* 推荐商品标题 */
+.recommend-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 14rpx 10rpx 14rpx;
+    margin: 14rpx;
+}
+
+.recommend-title text {
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.recommend-title .more {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.image-show {
+    margin: 14rpx;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14rpx;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+}
+
+.image-item1,
+.image-item2 {
+    width: 100%;
+    height: 200rpx;
+    border-radius: 10rpx;
+}

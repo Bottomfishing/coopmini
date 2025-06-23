@@ -1,0 +1,117 @@
+<view class="container">
+    <!-- 登录 -->
+    <navigator url="/pages/log/log" wx:if="{{!isLoggedIn}}">
+        <view class="userbox">
+            <image class="pic" src="{{pic_}}" mode="aspectFill" />
+            <view class="usercenter">
+                <view class="title">{{user_}}</view>
+                <view class="person_text">{{personalized_}}</view>
+            </view>
+        </view>
+    </navigator>
+
+    <!-- 信息显示 -->
+    <view class="userbox" wx:if="{{isLoggedIn}}">
+        <image class="pic" src="{{userInfo.avatarUrl}}" mode="aspectFill" />
+        <view class="usercenter">
+            <view class="title">{{userInfo.nickName}}</view>
+            <view class="person_text">{{personalized}}</view>
+        </view>
+        <van-icon name="arrow" size="40rpx" color="#333333" bind:tap="toPersonDatil" />
+    </view>
+
+    <!-- 常用功能 -->
+    <view class="common_item">
+        <view class="item">
+            <image src="https://cdn1.iconfinder.com/data/icons/ecommerce-414/512/Store.png" mode="" />
+            <view class="item_dec">
+                <view class="item_title">收藏</view>
+                <view class="item_text">收藏内容</view>
+            </view>
+        </view>
+        <view class="item">
+            <image src="https://cdn1.iconfinder.com/data/icons/ecommerce-414/512/Tote_bag.png" mode="" />
+            <view class="item_dec">
+                <view class="item_title">订单</view>
+                <view class="item_text">订单记录</view>
+            </view>
+        </view>
+        <view class="item">
+            <image src="https://cdn3.iconfinder.com/data/icons/product-management-26/512/Analyze_Product.png" mode="" />
+            <view class="item_dec">
+                <view class="item_title">记录</view>
+                <view class="item_text">浏览过的</view>
+            </view>
+        </view>
+        <view class="item">
+            <image src="https://cdn3.iconfinder.com/data/icons/product-management-26/512/Analyze_Gear.png" mode="" />
+            <view class="item_dec">
+                <view class="item_title">设置</view>
+                <view class="item_text">系统设置</view>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- vip提示 -->
+    <!-- <navigator url="/pages/mine/VIP/VIP">
+        <view class="vip_prompt">
+            <view class="vip_prompt_text">VIP会员专享特权，点击了解更多</view>
+            <button class="vip_prompt_button">去升级</button>
+        </view>
+    </navigator> -->
+
+
+
+    <!-- 智能简历帮写帮手小助手 -->
+    <!-- <navigator url="/pages/mine/AIresume/AIresume">
+        <view class="assistant">
+            <view class="assistant_title">
+                <image class="ass_pic"
+                    src="https://cdn3.iconfinder.com/data/icons/basic-ui-elements-2-4-filled-outline-45/512/Basic_UI_Elements_2.4_-_Filled_Outline_-_45-36-1024.png"
+                    mode="aspectFill"></image>
+                <view class="assistant_text">智能简历帮写帮手小助手</view>
+            </view>
+            <view class="assistant_text">
+                智能简历帮写帮手小助手是一款智能简历撰写工具，它可以根据用户的需求，自动生成一份高质量的简历，帮助用户快速完成简历撰写。
+            </view>
+        </view>
+    </navigator> -->
+
+    <!-- 推出登录按钮 -->
+    <view class="btn" wx:if="{{isLoggedIn}}">
+        <view class="qitelog" bindtap="showLogoutConfirm">
+            退出登录
+        </view>
+    </view>
+    <!-- 页脚 -->
+    <view class="footer">
+        <view class="footer-item">客服电话：<text class="phone-number">123456789</text></view>
+        <view class="footer-item">工作时间：周一至周五 9:00 - 18:00</view>
+        <view class="footer-item">举报电话：<text class="phone-number">987654321</text></view>
+        <view class="license-links">
+            <navigator url="" class="license-link">许可证</navigator>
+            <text class="li"> | </text>
+            <navigator url="" class="license-link">营业执照</navigator>
+            <text class="li"> | </text>
+            <navigator url="" class="license-link">社区监督</navigator>
+        </view>
+    </view>
+</view>
+
+
+
+<view wx:if="{{userInfo}}">
+  <image src="{{userInfo.avatarUrl}}" style="width:200rpx;height:200rpx;"></image>
+  <text>{{userInfo.nickName}}</text>
+</view>
+<view wx:else>
+  您还未登录，请先登录。
+</view>
+
+
+
+<button type="default" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">授权登录</button>
+<image class="" src="{{ avatarUrl }}" mode="aspectFit|aspectFill|widthFix"></image>
+<view>{{ nickName }}</view>
+<input type="nickname" class="inp" bindblur="nickNameInput"  placeholder="请输入昵称" />

@@ -1,0 +1,247 @@
+page {
+    background: #f8f9fa;
+}
+
+/* 容器样式 */
+.container {
+    margin: 20rpx 20rpx 0;
+}
+
+/* 用户框样式 */
+.userbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.02);
+}
+
+/* 用户头像样式 */
+.pic {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 40%;
+}
+
+/* 用户中心样式 */
+.usercenter {
+    flex: 1;
+    padding-left: 40rpx;
+}
+
+/* 标题样式 */
+.title {
+    font-size: 35rpx;
+    font-weight: 600;
+    color: #000;
+}
+
+/* 个性签名样式 */
+.person_text {
+    font-size: 28rpx;
+    font-weight: 400;
+    padding-top: 10rpx;
+    color: #999999;
+}
+
+/* 常用功能项样式 */
+.common_item {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 常用功能子项样式 */
+.common_item image {
+    width: 100rpx;
+    height: 100rpx;
+    padding: 10rpx 10rpx 0 10rpx;
+    border-radius: 50%;
+}
+
+/* 常用功能子项样式 */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 常用功能子项描述样式 */
+.item_dec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 常用功能子项标题样式 */
+.item_title {
+    font-size: 24rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+/* 常用功能子项文本样式 */
+.item_text {
+    font-size: 20rpx;
+    color: #666;
+}
+
+/* vip提示样式 */
+.vip_prompt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 20rpx 20rpx 40rpx;
+    background-image: linear-gradient(to bottom, #39d7df, #00857e);
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.vip_prompt_text {
+    margin: 10rpx 0 10rpx 0;
+    font-size: 28rpx;
+    background-image: linear-gradient(to right, #ffe5b2, #ffb758);
+    /* 定义渐变背景 */
+    -webkit-background-clip: text;
+    /* 将背景裁剪到文字区域 */
+    -webkit-text-fill-color: transparent;
+    /* 使文字颜色透明，显示背景颜色 */
+    color: #333;
+    /* 设置一个备用颜色，以防浏览器不支持上述属性 */
+}
+
+.vip_prompt_button {
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #ffe5b2, #ffb758);
+    color: hsl(38, 64%, 20%);
+    font-size: 24rpx;
+    font-weight: 600;
+    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.1);
+
+    position: absolute;
+    right: 0;
+    margin: 30rpx 40rpx 30rpx 0;
+
+}
+
+
+
+/* 智能简历帮写帮手小助手 */
+.assistant {
+    align-items: center;
+    padding: 20rpx;
+    background-image: linear-gradient(to bottom, #ddfdfc, #ffffff);
+    border-radius: 20rpx;
+    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.ass_pic {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    margin-right: 8rpx;
+}
+
+/* 智能简历帮写帮手小助手标题样式 */
+.assistant_title {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+/* 智能简历帮写帮手小助手文本样式 */
+.assistant_text {
+    font-size: 24rpx;
+    color: #525050;
+}
+
+/* 其他功能 */
+.other {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+}
+
+/* 退出登录按钮样式 */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25rpx;
+    width: 100%;
+}
+
+.qitelog {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20rpx 40rpx;
+    border-radius: 10rpx;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.qitelog:hover {
+    background-color: #f1f1f1;
+}
+
+/* 页脚样式 */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx;
+    margin-top: 50rpx;
+}
+
+.footer-item {
+    font-size: 24rpx;
+    /* 设置文字大小 */
+    margin-bottom: 10rpx;
+    color: #999;
+}
+
+.phone-number {
+    color: #67b0fe;
+    /* 设置电话号码的颜色 */
+}
+
+.license-links {
+    display: flex;
+    align-items: center;
+}
+
+.license-link {
+    text-align: center;
+    font-size: 24rpx;
+    /* 设置文字大小 */
+    color: #999;
+}
+
+.li {
+    color: #999;
+    font-size: 24rpx;
+}
+
+
+
+.inp{
+    border: 1px solid gray;
+}
