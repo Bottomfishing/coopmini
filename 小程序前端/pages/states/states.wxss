@@ -1,16 +1,10 @@
-page {
-    background: #f8f9fa;
-}
-
-/* 订单状态部分样式 */
+/* pages/states/states.wxss *//* 订单状态部分样式 */
 .order-status {
-    margin-top: 20rpx;
     display: flex;
     justify-content: space-around;
     padding: 20rpx;
     background-color: #fff;
     margin-bottom: 20rpx;
-    padding-bottom: 20rpx;
 }
 
 .status-item {
@@ -36,7 +30,7 @@ page {
     color: #333;
 }
 
-/* 订单列表部分样式
+/* 订单列表部分样式 */
 .order-list {
     background-color: #fff;
     padding: 20rpx;
@@ -74,5 +68,4 @@ page {
 .btn-pay {
     background-color: #fbba47;
     color: #fff;
-} */
-
+}

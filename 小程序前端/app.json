@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/state/state",
     "pages/person/person",
     "pages/order/order",
     "pages/cart/cart",
-    "pages/log/log"
+    "pages/log/log",
+    "pages/states/states"
   ],
   "requiredPrivateInfos": [
     "getLocation"
@@ -36,7 +36,7 @@
         "selectedIconPath": "/images/order-a.png"
       },
       {
-        "pagePath": "pages/state/state",
+        "pagePath": "pages/states/states",
         "text": "状态",
         "iconPath": "/images/state.png",
         "selectedIconPath": "/images/state-a.png"
