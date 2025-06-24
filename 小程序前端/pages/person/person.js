@@ -181,6 +181,14 @@ Page({
         this.setData({
             nickName: e.detail.value
         })
+    },
+
+    // 退出登录
+    logout() {
+        this.setData({
+            nickName: '',
+            avatarUrl: '',
+        })
     }
 
 })

@@ -111,7 +111,9 @@
 
 
 
-<button type="default" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">授权登录</button>
-<image class="" src="{{ avatarUrl }}" mode="aspectFit|aspectFill|widthFix"></image>
-<view>{{ nickName }}</view>
-<input type="nickname" class="inp" bindblur="nickNameInput"  placeholder="请输入昵称" />
+<button wx:if="{{!avatarUrl}}" type="default" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">授权登录</button>
+<image wx:else class="" src="{{ avatarUrl }}" mode="aspectFit|aspectFill|widthFix"></image>
+<view wx:if="{{nickName}}">{{ nickName }}</view>
+<input wx:else type="nickname" class="inp" bindblur="nickNameInput"  placeholder="请输入昵称" />
+<button wx:if="{{nickName}}" bindtap="logout">退出登录</button>
+

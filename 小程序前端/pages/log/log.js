@@ -10,9 +10,9 @@ Page({
     wx.getUserProfile({ // 使用微信提供的接口获取用户信息
       desc: '用于完善会员资料',
       success: (res) => {
-        this.setData({ 
+        this.setData({
           hasUserInfo: true,
-          userInfo: res.userInfo 
+          userInfo: res.userInfo
         });
         app.globalData.userInfo = res.userInfo; // 保存到全局数据
         wx.setStorageSync('userInfo', res.userInfo); // 保存到本地存储
@@ -27,23 +27,47 @@ Page({
     });
 
     // 检查授权状态？
-    wx.getSetting({ 
-        success(res) { 
-            console.log(res.authSetting); 
-        }
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting);
+      }
     });
   },
 
   // 退出登录方法
   logout() {
     const app = getApp();
-    this.setData({ 
+    this.setData({
       hasUserInfo: false,
-      userInfo: {} 
+      userInfo: {}
     });
     // 清除全局数据
     app.globalData.userInfo = null;
     // 清除本地存储
     wx.removeStorageSync('userInfo');
-  }
+  },
+
+
+
+
+
+  // 获取用户头像
+  chooseAvatar(e) {
+    console.log(e)
+    this.setData({
+      avatarUrl: e.detail.avatarUrl
+    })
+  },
+
+  // 获取用户昵称
+  nickNameInput(e) {
+    console.log(e)
+    this.setData({
+      nickName: e.detail.value
+    })
+  },
+
+
+
+
 });
