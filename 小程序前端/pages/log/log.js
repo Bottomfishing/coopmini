@@ -1,7 +1,11 @@
 Page({
   data: {
     hasUserInfo: false,
-    userInfo: {}
+    userInfo: {},
+    avatarUrl: '',
+    nickName: '',
+    studentId: '',
+    studentIdError: false,
   },
 
   // 登录方法
@@ -48,9 +52,6 @@ Page({
   },
 
 
-
-
-
   // 获取用户头像
   chooseAvatar(e) {
     console.log(e)
@@ -67,7 +68,36 @@ Page({
     })
   },
 
+  // 处理学号输入
+  bindStudentIdInput(e) {
+    this.setData({
+      studentId: e.detail.value
+    });
+  },
 
+  // 导航到个人中心页面
 
+  navigateToPerson() {
+    if (this.data.isSubmitting) return;
+    const app = getApp();
+    const { avatarUrl, nickName, studentId, gender } = this.data;
+    // 同步用户信息到全局状态和本地存储
+    const userInfo = {
+      avatarUrl,
+      nickName,
+      studentId,
+      gender
+    };
+    app.globalData.userInfo = userInfo;
+    wx.setStorageSync('userInfo', userInfo);
+    // 跳转到个人中心页面（tabBar页面使用switchTab）
+    wx.setStorage({
+      key: 'userInfo',
+      data: userInfo,
+      success: () => {
+        wx.switchTab({ url: '/pages/person/person' });
+      }
+    });
+  }
 
 });

@@ -10,23 +10,31 @@ Page({
         pic_: "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
         user_: "点击登录/注册",
         personalized: "个人状态：未完善",
-        personalized_: "可查看更多信息",
         isLoggedIn: false
     },
 
+    // 初始化页面
     onLoad() {
-        const userInfo = getApp().globalData.userInfo || wx.getStorageSync('userInfo'); // 从全局数据或本地存储读取用户信息
+        this.initUserInfo();
+    },
+
+    // 页面显示时重新加载用户信息
+    onShow() {
+        this.initUserInfo(); // 原有初始化逻辑
+        // 新增：从本地存储同步最新数据
+        const userInfo = wx.getStorageSync('userInfo');
         if (userInfo) {
-            this.setData({
-                userInfo,
-            });
+            this.setData(userInfo); 
         }
-        if (wx.getStorageSync('userInfo')) {
-            this.setData({
-                isLoggedIn: true,
-                userInfo: wx.getStorageSync('userInfo')
-            });
-        }
+    },
+
+    // 初始化用户信息
+    initUserInfo() {
+        const userInfo = getApp().globalData.userInfo || wx.getStorageSync('userInfo');
+        this.setData({
+            userInfo: userInfo || {},
+            isLoggedIn: !!userInfo
+        });
     },
     toPersonDatil(e) {
         wx.navigateTo({
@@ -34,40 +42,22 @@ Page({
         })
     },
 
-    onShow: function () {
-
-
-        const app = getApp();
-        const userInfo = app.globalData.userInfo || wx.getStorageSync('userInfo');
-        if (userInfo) {
-            this.setData({ userInfo });
-        }
-
-        let userinfo = wx.getStorageSync('userinfo')
-        if (userinfo != '') {
-            this.setData({
-                disabled: false
-            })
-        }
-        else {
-            this.setData({
-                disabled: true
-            })
-        }
+    // 跳转到log页面
+    // 跳转到log页面
+    navigateToLog() {
+        wx.navigateTo({
+            url: '/pages/log/log',
+            success: () => console.log('跳转log页面成功'),
+            fail: (err) => {
+                console.error('跳转log页面失败', err);
+                wx.showToast({ title: '跳转失败，请稍后再试', icon: 'none' });
+            }
+        });
     },
+
+    // 页面显示时执行
     onShow() {
-        const userInfo = wx.getStorageSync('userInfo');
-        if (userInfo) {
-            this.setData({
-                userInfo: userInfo
-            });
-        }
-        if (wx.getStorageSync('userInfo')) {
-            this.setData({
-                isLoggedIn: true,
-                userInfo: wx.getStorageSync('userInfo')
-            });
-        }
+        this.initUserInfo();
     },
     //监听下拉刷新
     onPullDownRefresh() {
@@ -104,41 +94,67 @@ Page({
 
     // 退出登录逻辑
     logout() {
-        // 清除全局数据中的用户信息
-        getApp().globalData.userInfo = null;
+        try {
+            // 清除全局数据中的用户信息
+            getApp().globalData.userInfo = null;
 
-        // 清除本地存储中的用户信息
-        wx.removeStorageSync('userInfo');
+            // 清除本地存储中的用户信息
+            wx.removeStorageSync('userInfo');
 
-        // 清除本地存储中的用户信息
-        wx.removeStorageSync('userinfo');
-
-        // 更新页面状态为未登录
-        this.setData({
-            isLoggedIn: false,
-            userInfo: {}
-        });
-
-        // 重新加载数据或执行其他更新页面的逻辑
-        this.reloadData();
-    },
-
-    // 重新加载数据或执行其他更新页面的逻辑
-    reloadData() {
-        // 这里可以添加重新加载数据的逻辑，例如重新获取用户信息等
-        // 示例：从全局数据或者本地存储中读取用户信息
-        const userInfo = getApp().globalData.userInfo || wx.getStorageSync('userInfo');
-        if (userInfo) {
+            // 更新页面状态为未登录
             this.setData({
-                userInfo: userInfo,
-                isLoggedIn: true
+                isLoggedIn: false,
+                userInfo: {}
             });
-        } else {
-            this.setData({
-                userInfo: {},
-                isLoggedIn: false
+
+            // 显示退出成功提示
+            wx.showToast({
+                title: '退出登录成功',
+                icon: 'success',
+                duration: 2000
+            });
+        } catch (error) {
+            console.error('退出登录失败:', error);
+            wx.showToast({
+                title: '退出登录失败',
+                icon: 'error'
             });
         }
+    },
+
+    // 页面跳转公共方法
+    navigateToPage(url) {
+        if (!url) return;
+        wx.navigateTo({
+            url: url,
+            fail: (err) => {
+                console.error('页面跳转失败:', err);
+                wx.showToast({
+                    title: '页面跳转失败',
+                    icon: 'error'
+                });
+            }
+        });
+    },
+
+    // 跳转到订单页面
+    toOrder() {
+        this.navigateToPage('/pages/order/order');
+    },
+
+    // 跳转到简历页面
+    toResume() {
+        this.navigateToPage('/pages/resume/resume');
+    },
+
+    // 跳转到面试页面
+    toInterview() {
+        this.navigateToPage('/pages/interview/interview');
+    },
+
+    // 跳转到收藏页面
+    toHeart() {
+        this.navigateToPage('/pages/heart/heart');
     },
 
 
@@ -165,30 +181,4 @@ Page({
             url: '/pages/heart/heart',
         })
     },
-
-
-    // 获取用户头像
-    chooseAvatar(e) {
-        console.log(e)
-        this.setData({
-            avatarUrl: e.detail.avatarUrl
-        })
-    },
-
-    // 获取用户昵称
-    nickNameInput(e) {
-        console.log(e)
-        this.setData({
-            nickName: e.detail.value
-        })
-    },
-
-    // 退出登录
-    logout() {
-        this.setData({
-            nickName: '',
-            avatarUrl: '',
-        })
-    }
-
 })

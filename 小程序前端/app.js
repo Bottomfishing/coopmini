@@ -32,14 +32,30 @@ App({
 
     this.watchUserInfo()
   },
+  updateUserInfo(userInfo) {
+    this.globalData.userInfo = userInfo;
+    wx.setStorageSync('userInfo', userInfo);
+  },
+  watchUserInfo() {
+    const that = this;
+    Object.defineProperty(this.globalData, 'userInfo', {
+      set(newVal) {
+        this._userInfo = newVal;
+        wx.setStorageSync('userInfo', newVal);
+      },
+      get() {
+        return this._userInfo;
+      }
+    });
+  },
   globalData: {
     userInfo: null
   }
 })
 
-App({ 
-  globalData: { 
-    userInfo: null 
+App({
+  globalData: {
+    userInfo: null
   }
 });
 

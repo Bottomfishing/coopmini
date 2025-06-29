@@ -10,9 +10,9 @@ page {
 /* 用户框样式 */
 .userbox {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20rpx;
+    padding: 20rpx 20rpx 20rpx 0;
     background-color: #ffffff;
     border-radius: 20rpx;
     box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.02);
@@ -23,12 +23,31 @@ page {
     width: 120rpx;
     height: 120rpx;
     border-radius: 40%;
+    margin: 0 30rpx 0 20rpx;
 }
 
 /* 用户中心样式 */
 .usercenter {
+    margin-left: 0rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15rpx;
+}
+
+.info-item {
+    display: flex;
+    font-size: 28rpx;
+}
+
+.info-label {
+    width: 120rpx;
+    color: #666;
+}
+
+.info-value {
     flex: 1;
-    padding-left: 40rpx;
+    color: #333;
 }
 
 /* 标题样式 */
@@ -74,6 +93,12 @@ page {
     align-items: center;
 }
 
+.item image {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0 0 10rpx 0;
+}
+
 /* 常用功能子项描述样式 */
 .item_dec {
     display: flex;
@@ -92,90 +117,6 @@ page {
 .item_text {
     font-size: 20rpx;
     color: #666;
-}
-
-/* vip提示样式 */
-.vip_prompt {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20rpx 20rpx 20rpx 40rpx;
-    background-image: linear-gradient(to bottom, #39d7df, #00857e);
-    border-radius: 20rpx;
-    margin-bottom: 20rpx;
-    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.05);
-}
-
-.vip_prompt_text {
-    margin: 10rpx 0 10rpx 0;
-    font-size: 28rpx;
-    background-image: linear-gradient(to right, #ffe5b2, #ffb758);
-    /* 定义渐变背景 */
-    -webkit-background-clip: text;
-    /* 将背景裁剪到文字区域 */
-    -webkit-text-fill-color: transparent;
-    /* 使文字颜色透明，显示背景颜色 */
-    color: #333;
-    /* 设置一个备用颜色，以防浏览器不支持上述属性 */
-}
-
-.vip_prompt_button {
-    border-radius: 20px;
-    background-image: linear-gradient(to right, #ffe5b2, #ffb758);
-    color: hsl(38, 64%, 20%);
-    font-size: 24rpx;
-    font-weight: 600;
-    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.1);
-
-    position: absolute;
-    right: 0;
-    margin: 30rpx 40rpx 30rpx 0;
-
-}
-
-
-
-/* 智能简历帮写帮手小助手 */
-.assistant {
-    align-items: center;
-    padding: 20rpx;
-    background-image: linear-gradient(to bottom, #ddfdfc, #ffffff);
-    border-radius: 20rpx;
-    box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.1);
-}
-
-.ass_pic {
-    width: 50rpx;
-    height: 50rpx;
-    border-radius: 50%;
-    margin-right: 8rpx;
-}
-
-/* 智能简历帮写帮手小助手标题样式 */
-.assistant_title {
-    display: flex;
-    align-items: center;
-    font-size: 32rpx;
-    font-weight: bold;
-    margin-bottom: 10rpx;
-}
-
-/* 智能简历帮写帮手小助手文本样式 */
-.assistant_text {
-    font-size: 24rpx;
-    color: #525050;
-}
-
-/* 其他功能 */
-.other {
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20rpx;
-    background-color: #ffffff;
-    border-radius: 20rpx;
 }
 
 /* 退出登录按钮样式 */
@@ -238,10 +179,4 @@ page {
 .li {
     color: #999;
     font-size: 24rpx;
-}
-
-
-
-.inp{
-    border: 1px solid gray;
 }

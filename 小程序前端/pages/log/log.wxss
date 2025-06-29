@@ -5,20 +5,240 @@ page {
 /* 容器样式 */
 .container {
   margin: 20rpx 20rpx 0;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
 }
 
 .prompt {
   text-align: center;
+  padding: 30rpx 20rpx;
+  font-size: 32rpx;
+  color: #333333;
+  background-color: #f0f2f5;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
 }
 
 .login {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20rpx;
+  padding: 40rpx 20rpx;
   background-color: #ffffff;
   border-radius: 20rpx;
-  box-shadow: 0 3rpx 4rpx rgba(0, 0, 0, 0.02);
+  box-shadow: 0 3rpx 15rpx rgba(0, 0, 0, 0.05);
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin: 30rpx 0;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 4rpx solid #f0f0f0;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.avatar-btn {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  border: 2rpx dashed #ddd;
+  box-shadow: 0 8rpx 15rpx rgba(7, 193, 96, 0.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 5rpx 10rpx rgba(7, 193, 96, 0.08);
+}
+
+/* 输入框图标样式补充 */
+.input-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 授权按钮图标间距 */
+.auth-login-btn .login-icon {
+  margin-right: 15rpx;
+}
+
+.info-container {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.form-item .label {
+  width: 25%;
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.form-item .input,
+.form-item .picker {
+  flex: 1;
+  width: 70%;
+}
+
+.label {
+  width: 100%;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin: 20rpx 0;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.label {
+  width: 120rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.input,
+.picker {
+  flex: 1;
+  padding: 18rpx 20rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.picker:focus {
+  border-color: #07c160;
+  box-shadow: 0 0 0 4rpx rgba(7, 193, 96, 0.1);
+  border-width: 2rpx;
+  outline: none;
+}
+
+/* 授权登录按钮样式 */
+.auth-login-btn {
+  width: 80%;
+  height: 90rpx;
+  background: linear-gradient(135deg, #07c160 0%, #06b258 100%);
+  color: white;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  box-shadow: 0 8rpx 15rpx rgba(7, 193, 96, 0.2);
+  transition: all 0.3s ease;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-login-btn:hover {
+  transform: translateY(-2rpx);
+  box-shadow: 0 12rpx 20rpx rgba(7, 193, 96, 0.25);
+}
+
+.auth-login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5rpx 10rpx rgba(7, 193, 96, 0.2);
+}
+
+/* 昵称输入框特殊样式 */
+.nickname-input {
+  border: 2rpx solid #f0f0f0;
+  background-color: #fafafa;
+}
+
+.nickname-input:focus {
+  border-color: #07c160;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4rpx rgba(7, 193, 96, 0.1);
+}
+
+/* 页面容器增强立体效果 */
+.container {
+  margin: 40rpx 20rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 5rpx 20rpx rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+/* 添加输入框图标位置 */
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 20rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.input-with-icon {
+  padding-left: 70rpx !important;
+}
+
+.confirm-btn {
+  background-color: #07c160;
+  color: white;
+  padding: 15rpx 30rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 600rpx;
+}
+.confirm-btn:hover {
+  background-color: #06b258;
+}
+
+
+
+.bottom-btn {
+  width: 90%;
 }
 
 /* 用户头像样式 */
@@ -29,6 +249,8 @@ page {
 }
 
 .usercenter {
-  flex: 1;
-  padding-left: 40rpx;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30rpx;
 }

@@ -10,14 +10,27 @@
  -->
 
 <view class="container">
-    <view class="prompt" wx:if="{{!avatarUrl && !nickName}}">您还未进行登录，请先登录以后完善个人信息</view>
-    <view class="login">
-        <button wx:if="{{!avatarUrl}}" type="default" open-type="chooseAvatar"
-            bindchooseavatar="chooseAvatar">授权登录</button>
-        <image wx:else class="pic" src="{{ avatarUrl }}" mode="aspectFit|aspectFill|widthFix"></image>
-        <view class="usercenter">
-            <view wx:if="{{nickName}}">{{ nickName }}</view>
-            <input wx:else type="nickname" class="inp" bindblur="nickNameInput" placeholder="请输入昵称" />
+    <view class="prompt" wx:if="{{!avatarUrl && !nickName}}">您还未进行登录，请先登录完善个人信息</view>
+    <view class="avatar-container">
+        <image wx:if="{{avatarUrl}}" class="avatar" src="{{ avatarUrl }}" mode="aspectFill"></image>
+        <button wx:else class="auth-login-btn" bindchooseavatar="chooseAvatar" open-type="chooseAvatar">
+            授权登录获取头像
+        </button>
+    </view>
+    <view class="info-container">
+        <view class="form-item">
+            <text class="label">昵称：</text>
+            <input type="nickname" class="input" bindblur="nickNameInput" placeholder="请输入昵称" />
+        </view>
+        <view class="info-group">
+            <view class="form-item">
+                <text class="label">学号：</text>
+                <input type="number" class="input" bindinput="bindStudentIdInput" placeholder="请输入学号" />
+                <text wx:if="{{studentIdError}}" class="error-tip">学号不能为空且需为数字</text>
+            </view>
         </view>
     </view>
+    <button bindtap="navigateToPerson" class="confirm-btn bottom-btn">
+        保存并返回个人中心
+    </button>
 </view>
